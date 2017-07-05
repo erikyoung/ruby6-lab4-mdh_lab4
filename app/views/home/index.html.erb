@@ -1,2 +1,32 @@
 <h1>Welcome</h1>
 <p>This is a basic chat app</p>
+
+<div class="card">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <% @rooms.each do |room| %>
+          <%= link_to room.name + ' Room', room_path(id: room.id), class: "form-control"%>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <br>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group form-inline">
+          <%= form_for Room.new do |f| %>
+            <%= f.text_field :name, class: "form-control" %>
+            <%= f.submit nil, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

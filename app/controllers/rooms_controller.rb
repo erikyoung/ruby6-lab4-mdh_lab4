@@ -1,12 +1,17 @@
 class RoomsController < ApplicationController
 
-<<<<<<< HEAD
+
 def index
 	@rooms = Room.all
+	
+end
+
+def new
+	@room = Room.new
 end
 
 def create
-	@rooms = Room.new(room_params)
+	@room = Room.new(room_params)
 	if @rooms.save
 		flash[:success] = "Hey it worked!"
 		redirect_to root_path
@@ -21,7 +26,7 @@ private
 def room_params
 	params.require(:room).permit(:name)
 	end
-=======
+
   def create
     @room = Room.new(room_params)
     if @room.save
@@ -41,5 +46,5 @@ def room_params
   def room_params
     params.require(:room).permit(:name)
   end
->>>>>>> ed53c905c805f25e1b5a8c2bcd657fee09f3ac00
+
 end

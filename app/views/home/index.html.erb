@@ -1,2 +1,21 @@
-<h1>Welcome</h1>
+<h1>Welcome to <%= @room.name %></h1>
 <p>This is a basic chat app</p>
+
+<% @rooms.each do |room| %>
+	<%= @room.name %> 
+<% end %>
+
+<%= form_for @rooms, class: 'form-control' do |f| %>
+  <div class="control-group col-md-6">
+	<%= f.input :room %>
+	</div>
+<% end %> 
+
+
+
+
+
+
+
+
+
